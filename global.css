@@ -115,7 +115,7 @@ div.scroll-container img {
   display: inline-block; /* Keeps images in a row */
 }
 
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   body {
     background-color: pink;
     width: 95vw;
@@ -125,4 +125,4 @@ div.scroll-container img {
   nav > ul {
       font-size: 2em;
   }
-}
+} */
