@@ -1,0 +1,128 @@
+/* imports Inter, Noto Sans from Google Fonts (code copied from Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+HK&family=Noto+Sans+JP&display=swap');
+
+/* define some variables for easy reuse inside the "root" pseudo-selector, this
+ * way we can easily change the main colors of the site without having to change
+ * them in a bunch of different selectors
+ *
+ * root doesn't select any actual HTML elements, it's just a holder we can use 
+ * for styles */
+:root {
+  --fg-color: rgb(117, 110, 110);
+  --link-color: rgb(157, 149, 149);
+}
+
+/* styles that affect everything on the page can go in 'html' */
+html {
+  font-family: 'Inter', 'Noto Sans HK', sans-serif;
+  // background-image: url('ezgif.com-optimize.gif');
+  background-color: black;
+  background-size: cover;
+  color: var(--fg-color);
+}
+
+
+/* another pseudo-selector, for the box drawn when the user selects text */
+::selection {
+// background-image: url('ezgif.com-optimize.gif');
+ background-color: black;
+  background-size: cover;
+  color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 768px;
+  /* the two value shorthand for the margin property accepts the "auto" keyword
+   * in this case, the second value is the horizonal margins and auto splits
+   * the available space equally between left and right, centering our element
+   */
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul.grid {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+ul.grid > li {
+  width: 100%;
+  text-align: center;
+  padding: 24px;
+  
+}
+
+ul.grid > li > img {
+  width: 100%;
+  aspect-ratio: 2.39;
+  height: auto;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+
+.p5embed {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+.byline {
+  text-align: right;
+  font-size: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+figcaption {
+  text-align: center;
+}
+
+div.scroll-container {
+  background-color: #010000;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  width: 80%; /* You can increase this to 90% or even 100% if you want it larger */
+  min-width: 600px; /* Or any other minimum size you prefer */
+  margin: auto; /* This centers the container in its parent element */
+}
+
+div.scroll-container img {
+  padding: 10px;
+  max-width: 100%; /* Allows images to grow up to the container's width */
+  max-height: 300px; /* Adjusting this can help landscape images appear larger */
+  height: auto; /* Maintains aspect ratio */
+  display: inline-block; /* Keeps images in a row */
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: pink;
+    width: 95vw;
+  }
+
+
+  nav > ul {
+      font-size: 2em;
+  }
+}
